@@ -1,0 +1,68 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100vw; /* Make the main container take up the full width of the viewport */
+}
+
+/* Remove the max-height and overflow-y properties */
+
+.projectsWrapper {
+    padding: 20px 40px; /* Adjust padding to move the section higher up */
+    color: #fff;
+}
+
+.projectsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.projectsTitle {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.projectsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.projectCard {
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    transition: transform 0.3s ease;
+    color: #fff;
+}
+
+.projectCard h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.projectCard p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.technology {
+    background-color: #444;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+    color: #fff;
+}

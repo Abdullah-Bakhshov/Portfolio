@@ -105,7 +105,7 @@ const Index = () => {
                 style={{ 
                     position: 'absolute', 
                     top: '2%', 
-                    left: '0%', 
+                    left: '1%', 
                     width: '98%', 
                     height: '97%', 
                     objectFit: 'cover', 

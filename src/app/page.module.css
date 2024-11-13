@@ -2,13 +2,12 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 100vw; /* Make the main container take up the full width of the viewport */
+    width: 100vw; 
 }
 
-/* Remove the max-height and overflow-y properties */
 
 .projectsWrapper {
-    padding: 20px 40px; /* Adjust padding to move the section higher up */
+    padding: 20px 40px; 
     color: #fff;
 }
 

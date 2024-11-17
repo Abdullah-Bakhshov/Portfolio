@@ -128,18 +128,20 @@ const Projects = () => {
       (entries) => {
         entries.forEach((entry) => {
           const index = Number(entry.target.getAttribute('data-index'));
-          if (entry.isIntersecting) {
-            setVisibleProjects((prev) => {
-              const newVisibleProjects = [...prev];
-              newVisibleProjects[index] = true;
-              return newVisibleProjects;
-            });
-          } else {
-            setVisibleProjects((prev) => {
-              const newVisibleProjects = [...prev];
-              newVisibleProjects[index] = false;
-              return newVisibleProjects;
-            });
+          if (index >= 0 && index < visibleProjects.length) {
+            if (entry.isIntersecting) {
+              setVisibleProjects((prev) => {
+                const newVisibleProjects = [...prev];
+                newVisibleProjects[index] = true;
+                return newVisibleProjects;
+              });
+            } else {
+              setVisibleProjects((prev) => {
+                const newVisibleProjects = [...prev];
+                newVisibleProjects[index] = false;
+                return newVisibleProjects;
+              });
+            }
           }
         });
       },

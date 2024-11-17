@@ -123,8 +123,10 @@ const Projects = () => {
       technologies: ["Python", "Random Forest Classifier"]
     }
   ];
+  const observer = useRef<IntersectionObserver | null>(null);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    observer.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const index = Number(entry.target.getAttribute('data-index'));
@@ -152,16 +154,25 @@ const Projects = () => {
     projectElements?.forEach((element, index) => {
       if (element) {
         element.setAttribute('data-index', index.toString());
-        observer.observe(element);
+        observer.current?.observe(element);
       }
     });
 
     return () => {
       projectElements?.forEach((element) => {
-        observer.unobserve(element);
+        observer.current?.unobserve(element);
       });
     };
   }, [projects.length]);
+
+  useEffect(() => {
+    return () => {
+      const projectElements = projectsRef.current?.querySelectorAll(`.${styles.projectCard}`);
+      projectElements?.forEach((element) => {
+        observer.current?.unobserve(element);
+      });
+    };
+  }, []);
 
   return (
     <div className={styles.projectsWrapper}>

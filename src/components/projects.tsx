@@ -148,8 +148,10 @@ const Projects = () => {
 
     const projectElements = projectsRef.current?.querySelectorAll(`.${styles.projectCard}`);
     projectElements?.forEach((element, index) => {
-      element.setAttribute('data-index', index.toString());
-      observer.observe(element);
+      if (element) {
+        element.setAttribute('data-index', index.toString());
+        observer.observe(element);
+      }
     });
 
     return () => {

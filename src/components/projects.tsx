@@ -128,7 +128,7 @@ const Projects = () => {
       (entries) => {
         entries.forEach((entry) => {
           const index = Number(entry.target.getAttribute('data-index'));
-          if (index >= 0 && index < visibleProjects.length) {
+          if (index >= 0 && index < projects.length && index < visibleProjects.length) {
             if (entry.isIntersecting) {
               setVisibleProjects((prev) => {
                 const newVisibleProjects = [...prev];
